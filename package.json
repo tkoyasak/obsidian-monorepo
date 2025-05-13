@@ -6,13 +6,13 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@types/bun": "^1.2.5",
-    "@types/node": "^20.17.27",
+    "@types/bun": "^1.2.13",
+    "@types/node": "^20.17.46",
     "obsidian": "^1.8.7",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "volta": {
-    "node": "20.19.0"
+    "node": "20.19.1"
   },
   "scripts": {
     "build": "bun run scripts/build.mts",
