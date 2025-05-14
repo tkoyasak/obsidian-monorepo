@@ -3,14 +3,15 @@ import { ulid } from 'ulid'
 
 const unique_note = async (tp: Tp, dir: string) => {
   if (!(tp.app.vault.adapter instanceof tp.obsidian.FileSystemAdapter)) {
+    console.debug('script is only on desktop')
     return
   }
 
   const templates = fs
     .readdirSync(tp.app.vault.adapter.getFullPath(dir), { withFileTypes: true })
-    .filter((dirent) => dirent.isFile())
-    .filter((dirent) => dirent.name !== 'unique-note.md')
-    .map((dirent) => dirent.name)
+    .filter((d) => d.isFile())
+    .filter((d) => d.name.endsWith('-template.md'))
+    .map((d) => d.name)
 
   const target = await tp.system.suggester(
     templates,
@@ -19,15 +20,20 @@ const unique_note = async (tp: Tp, dir: string) => {
     "Select a template. If the file isn't empty, only the file name will be changed.",
   )
 
+  const template = tp.file.find_tfile(target)
+  if (!template) {
+    console.error(`not found '${target}'`)
+    return
+  }
+
   const id = ulid()
   const title = tp.file.title
   await tp.file.rename(id)
 
   tp.hooks.on_all_templates_executed(async () => {
     const file = tp.config.target_file
-    const template = tp.file.find_tfile(target)
 
-    if (template && (await tp.file.content).length === 0) {
+    if ((await tp.file.content).length === 0) {
       const content = await tp.app.vault.read(template)
       await tp.app.vault.modify(file, content)
     }
