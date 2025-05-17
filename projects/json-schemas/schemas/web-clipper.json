@@ -1,0 +1,168 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "#/definitions/Config",
+  "definitions": {
+    "Config": {
+      "anyOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "behavior": {
+              "type": "string",
+              "enum": [
+                "append-daily",
+                "prepend-daily"
+              ]
+            },
+            "noteNameFormat": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "schemaVersion": {
+              "type": "string",
+              "const": "0.1.0"
+            },
+            "name": {
+              "type": "string"
+            },
+            "noteContentFormat": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "text",
+                      "multitext",
+                      "number",
+                      "checkbox",
+                      "date",
+                      "datetime"
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "triggers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "context": {
+              "type": "string"
+            },
+            "$schema": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "behavior",
+            "name",
+            "noteContentFormat",
+            "properties"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "behavior": {
+              "type": "string",
+              "enum": [
+                "create",
+                "append-specific",
+                "prepend-specific",
+                "overwrite"
+              ]
+            },
+            "noteNameFormat": {
+              "type": "string"
+            },
+            "path": {
+              "type": "string"
+            },
+            "schemaVersion": {
+              "type": "string",
+              "const": "0.1.0"
+            },
+            "name": {
+              "type": "string"
+            },
+            "noteContentFormat": {
+              "type": "string"
+            },
+            "properties": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": "string"
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "text",
+                      "multitext",
+                      "number",
+                      "checkbox",
+                      "date",
+                      "datetime"
+                    ]
+                  }
+                },
+                "required": [
+                  "name",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "triggers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "context": {
+              "type": "string"
+            },
+            "$schema": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "behavior",
+            "name",
+            "noteContentFormat",
+            "noteNameFormat",
+            "path",
+            "properties"
+          ]
+        }
+      ]
+    }
+  }
+}

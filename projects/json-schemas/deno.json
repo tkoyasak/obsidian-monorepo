@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "ts-json-schema-generator": "npm:ts-json-schema-generator@^2.4.0"
+  },
+  "tasks": {
+    "generate": "deno run -R -E -W=./schemas scripts/generate.ts"
+  }
+}

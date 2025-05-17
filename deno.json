@@ -1,6 +1,8 @@
 {
   "imports": {
-    "@std/assert": "jsr:@std/assert@^1.0.13"
+    "@std/assert": "jsr:@std/assert@^1.0.13",
+    "@std/fs": "jsr:@std/fs@^1.0.17",
+    "@std/path": "jsr:@std/path@^1.0.9"
   },
   "fmt": {
     "semiColons": false,
@@ -8,6 +10,7 @@
   },
   "nodeModulesDir": "auto",
   "workspace": [
+    "./projects/json-schemas",
     "./projects/templater-functions"
   ]
 }
