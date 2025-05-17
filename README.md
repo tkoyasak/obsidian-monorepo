@@ -1,1 +1,1 @@
-# obsidian-templater-functions
+# obsidian-monorepo
