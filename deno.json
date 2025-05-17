@@ -1,16 +1,13 @@
 {
-  "nodeModulesDir": "auto",
   "imports": {
-    "@types/node": "npm:@types/node@^22.15.18",
-    "obsidian": "npm:obsidian@^1.8.7",
-    "tsdown": "npm:tsdown@^0.11.9",
-    "ulid": "npm:ulid@^3.0.0"
-  },
-  "tasks": {
-    "build": "tsdown"
+    "@std/assert": "jsr:@std/assert@^1.0.13"
   },
   "fmt": {
     "semiColons": false,
     "singleQuote": true
-  }
+  },
+  "nodeModulesDir": "auto",
+  "workspace": [
+    "./projects/templater-functions"
+  ]
 }

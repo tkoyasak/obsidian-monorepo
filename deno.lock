@@ -1,10 +1,24 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@std/assert@^1.0.13": "1.0.13",
+    "jsr:@std/internal@^1.0.6": "1.0.7",
     "npm:@types/node@^22.15.18": "22.15.18",
     "npm:obsidian@^1.8.7": "1.8.7_@codemirror+state@6.5.2_@codemirror+view@6.36.8",
+    "npm:tsdown@0.11.9": "0.11.9_rolldown@1.0.0-beta.8-commit.d95f99e",
     "npm:tsdown@~0.11.9": "0.11.9_rolldown@1.0.0-beta.8-commit.d95f99e",
     "npm:ulid@3": "3.0.0"
+  },
+  "jsr": {
+    "@std/assert@1.0.13": {
+      "integrity": "ae0d31e41919b12c656c742b22522c32fb26ed0cba32975cb0de2a273cb68b29",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.7": {
+      "integrity": "39eeb5265190a7bc5d5591c9ff019490bd1f2c3907c044a11b0d545796158a0f"
+    }
   },
   "npm": {
     "@babel/generator@7.27.1": {
@@ -396,10 +410,17 @@
   },
   "workspace": {
     "dependencies": [
-      "npm:@types/node@^22.15.18",
-      "npm:obsidian@^1.8.7",
-      "npm:tsdown@~0.11.9",
-      "npm:ulid@3"
-    ]
+      "jsr:@std/assert@^1.0.13"
+    ],
+    "members": {
+      "projects/templater-functions": {
+        "dependencies": [
+          "npm:@types/node@^22.15.18",
+          "npm:obsidian@^1.8.7",
+          "npm:tsdown@~0.11.9",
+          "npm:ulid@3"
+        ]
+      }
+    }
   }
 }
