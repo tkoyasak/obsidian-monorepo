@@ -6,6 +6,6 @@
     "ulid": "npm:ulid@^3.0.0"
   },
   "tasks": {
-    "build": "tsdown"
+    "build": "tsdown --silent"
   }
 }
