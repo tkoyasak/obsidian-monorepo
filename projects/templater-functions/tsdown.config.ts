@@ -12,7 +12,6 @@ const config: UserConfig = {
 } as const
 
 const entries = [
-  './functions/clip_hatena.ts',
   './functions/unique_note.ts',
 ] as const
 
