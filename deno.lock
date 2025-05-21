@@ -5,11 +5,10 @@
     "jsr:@std/fs@^1.0.17": "1.0.17",
     "jsr:@std/internal@^1.0.6": "1.0.7",
     "jsr:@std/path@^1.0.9": "1.0.9",
-    "npm:@types/node@^20.17.48": "20.17.48",
+    "npm:@types/node@^20.17.50": "20.17.50",
     "npm:obsidian@^1.8.7": "1.8.7_@codemirror+state@6.5.2_@codemirror+view@6.36.8",
     "npm:ts-json-schema-generator@^2.4.0": "2.4.0",
-    "npm:tsdown@0.11.12": "0.11.12_rolldown@1.0.0-beta.9",
-    "npm:tsdown@~0.11.12": "0.11.12_rolldown@1.0.0-beta.9",
+    "npm:tsdown@~0.12.1": "0.12.1_rolldown@1.0.0-beta.9",
     "npm:ulid@3": "3.0.0"
   },
   "jsr": {
@@ -234,8 +233,8 @@
     "@types/json-schema@7.0.15": {
       "integrity": "sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA=="
     },
-    "@types/node@20.17.48": {
-      "integrity": "sha512-KpSfKOHPsiSC4IkZeu2LsusFwExAIVGkhG1KkbaBMLwau0uMhj0fCrvyg9ddM2sAvd+gtiBJLir4LAw1MNMIaw==",
+    "@types/node@20.17.50": {
+      "integrity": "sha512-Mxiq0ULv/zo1OzOhwPqOA13I81CV/W3nvd3ChtQZRT5Cwz3cr0FKo/wMSsbTqL3EXpaBAEQhva2B8ByRkOIh9A==",
       "dependencies": [
         "undici-types"
       ]
@@ -355,8 +354,8 @@
         "signal-exit"
       ]
     },
-    "get-tsconfig@4.10.0": {
-      "integrity": "sha512-kGzZ3LWWQcGIAmg6iWvXn0ei6WDtV26wzHRMwDSzmAbcXrTEXxHy6IehI6/4eT6VRKyMP1eF1VqwrVUmE/LR7A==",
+    "get-tsconfig@4.10.1": {
+      "integrity": "sha512-auHyJ4AgMz7vgS8Hp3N6HXSmlMdUyhSUrfBF16w153rxtLIEOE+HGqaBppczZvnHLqQJfiHotCYpNhl0lUROFQ==",
       "dependencies": [
         "resolve-pkg-maps"
       ]
@@ -458,8 +457,8 @@
     "resolve-pkg-maps@1.0.0": {
       "integrity": "sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw=="
     },
-    "rolldown-plugin-dts@0.13.3_rolldown@1.0.0-beta.9": {
-      "integrity": "sha512-l0n0YsO9NI9Ve5Njmb1k2AYoDsgO8go1UEkXYnRgxoJokJXAK1V486XvOMxDpC8FcfgJwfQe71qmwpBjZXUOow==",
+    "rolldown-plugin-dts@0.13.4_rolldown@1.0.0-beta.9": {
+      "integrity": "sha512-2+3GnKj6A3wKfyomUKfONRHjgKE85X4PcgW1b84KkHvuN3mUuUiOMseLKafFLMF6NkqQPAJ3FErwtC4HuwIswg==",
       "dependencies": [
         "@babel/generator",
         "@babel/parser",
@@ -569,8 +568,8 @@
       ],
       "bin": true
     },
-    "tsdown@0.11.12_rolldown@1.0.0-beta.9": {
-      "integrity": "sha512-rPFmP79Tx+KO8s68OsF5q0sDNjZ2gA98AFf0vrtbaySIzilSGBtkIVhLPfwC/QBnvySyMcEtliteGYzDHQtZAw==",
+    "tsdown@0.12.1_rolldown@1.0.0-beta.9": {
+      "integrity": "sha512-lmeaGPIr5rB0nJA7I9L/bJVej+/iU3DgAaW7JqG+qLtDSvty+z+DhK/ZTUXhp5p7v3AZ1Kz3ccKLiDzNMTNpdw==",
       "dependencies": [
         "ansis",
         "cac",
@@ -652,9 +651,9 @@
       },
       "projects/templater-functions": {
         "dependencies": [
-          "npm:@types/node@^20.17.48",
+          "npm:@types/node@^20.17.50",
           "npm:obsidian@^1.8.7",
-          "npm:tsdown@~0.11.12",
+          "npm:tsdown@~0.12.1",
           "npm:ulid@3"
         ]
       }
