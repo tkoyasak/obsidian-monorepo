@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "0.1.0",
+  "name": "hatena",
+  "behavior": "create",
+  "noteContentFormat": "<%*\n  await tp.user.unique_note(tp)\n-%>\n\n{{content|replace:\"/\\[([^\\]]+)\\]\\(https:\\/\\/d\\.hatena\\.ne\\.jp\\/keyword\\/[^\\)]*\\)/g\":\"$1\"|replace:(\"/、/g\":\"，\",\"/。/g\":\"．\")}}\n",
+  "properties": [
+    {
+      "name": "id",
+      "value": "",
+      "type": "text"
+    },
+    {
+      "name": "created",
+      "value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
+      "type": "date"
+    },
+    {
+      "name": "modified",
+      "value": "{{date|date:\\\"YYYY-MM-DD\\\"}}",
+      "type": "date"
+    },
+    {
+      "name": "title",
+      "value": "{{title}}",
+      "type": "text"
+    },
+    {
+      "name": "source",
+      "value": "{{url}}",
+      "type": "text"
+    },
+    {
+      "name": "published",
+      "value": "{{published|date:\\\"YYYY-MM-DD\\\"}}",
+      "type": "date"
+    },
+    {
+      "name": "author",
+      "value": "{{author}}",
+      "type": "multitext"
+    },
+    {
+      "name": "category",
+      "value": "[\\\"clippings\\\"]",
+      "type": "multitext"
+    },
+    {
+      "name": "genre",
+      "value": "",
+      "type": "multitext"
+    },
+    {
+      "name": "tags",
+      "value": "",
+      "type": "multitext"
+    }
+  ],
+  "triggers": [
+    "https://blog-dry.com/"
+  ],
+  "noteNameFormat": "{{title}}",
+  "path": "01-clippings"
+}

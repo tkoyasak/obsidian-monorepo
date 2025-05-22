@@ -1,0 +1,5 @@
+{
+  "tasks": {
+    "validate": "deno run -R -E --allow-run=jsonschema-cli ./scripts/validate.ts"
+  }
+}
