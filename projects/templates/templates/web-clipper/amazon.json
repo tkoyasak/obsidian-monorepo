@@ -21,12 +21,7 @@
     },
     {
       "name": "title",
-      "value": "『{{selector:#productTitle}}』",
-      "type": "text"
-    },
-    {
-      "name": "language",
-      "value": "ja",
+      "value": "\\\"『{{selector:#productTitle}}』\\\"",
       "type": "text"
     },
     {
@@ -40,22 +35,22 @@
       "type": "date"
     },
     {
-      "name": "url",
-      "value": "[\\\"{{selector:link[rel=\\\"canonical\\\"]?href}}\\\"]",
+      "name": "urls",
+      "value": "[\\\"ndl\\\", \\\"{{selector:link[rel=\\\"canonical\\\"]?href}}\\\"]",
       "type": "multitext"
     },
     {
-      "name": "author",
+      "name": "authors",
       "value": "{{selector:#bylineInfo>.author>a}}",
       "type": "multitext"
     },
     {
-      "name": "category",
+      "name": "categories",
       "value": "[\\\"references\\\", \\\"books\\\"]",
       "type": "multitext"
     },
     {
-      "name": "genre",
+      "name": "genres",
       "value": "{{selector:#wayfinding-breadcrumbs_feature_div .a-list-item>a|slice:1}}",
       "type": "multitext"
     },

@@ -35,17 +35,17 @@
       "type": "date"
     },
     {
-      "name": "author",
-      "value": "{{selector:[class^=\\\"ProfileCard_displayName__\\\"]}}",
+      "name": "authors",
+      "value": "[\\\"{{selector:[class^=\\\"ProfileCard_displayName__\\\"]}}\\\"]",
       "type": "multitext"
     },
     {
-      "name": "category",
+      "name": "categories",
       "value": "[\\\"clippings\\\", \\\"posts\\\"]",
       "type": "multitext"
     },
     {
-      "name": "genre",
+      "name": "genres",
       "value": "[\\\"{{selector:[class^=\\\"View_topics__\\\"]>a>[class^=\\\"View_topicName__\\\"]|lower}}\\\"]",
       "type": "multitext"
     },

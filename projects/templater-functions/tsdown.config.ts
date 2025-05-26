@@ -1,18 +1,21 @@
-import { defineConfig, UserConfig } from 'tsdown'
+import { expandGlob } from '@std/fs'
 import modules from 'node:module'
+import { defineConfig } from 'tsdown'
 
-const config: UserConfig = {
-  outDir: 'dist',
-  target: 'node20.18',
-  format: 'cjs',
-  minify: true,
-  external: [
-    ...modules.builtinModules,
-  ],
-} as const
+const configs: ReturnType<typeof defineConfig>[] = []
 
-const entries = [
-  './functions/unique_note.ts',
-] as const
+for await (const entry of expandGlob('./functions/*.ts')) {
+  configs.push(
+    defineConfig({
+      entry: entry.path,
+      target: 'node20.18',
+      format: 'cjs',
+      minify: true,
+      external: [
+        ...modules.builtinModules,
+      ],
+    }),
+  )
+}
 
-export default entries.map((entry) => defineConfig({ ...config, entry }))
+export default configs

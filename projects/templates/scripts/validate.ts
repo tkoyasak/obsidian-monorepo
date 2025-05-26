@@ -1,4 +1,4 @@
-import { expandGlob, expandGlobSync } from '@std/fs/expand-glob'
+import { expandGlob } from '@std/fs'
 import * as path from '@std/path'
 import { consola } from 'consola'
 
@@ -7,13 +7,14 @@ const map: [
   string[],
 ][] = []
 
-for await (const entry of expandGlob('../json-schemas/schemas/*.json')) {
-  const schema = entry.path
-  const glob = path.join('./templates', entry.name.slice(0, -5), '*.json')
-  const targets = Array.from(expandGlobSync(glob)).map((e) =>
-    path.relative('.', e.path)
-  )
-  map.push([schema, targets])
+for await (const schema of expandGlob('../json-schemas/schemas/*.json')) {
+  const name = path.basename(schema.name, '.json')
+  const glob = path.join('./templates', name, '*.json')
+  const targets = []
+  for await (const entry of expandGlob(glob)) {
+    targets.push(path.relative('../', entry.path))
+  }
+  map.push([schema.path, targets])
 }
 
 const decoder = new TextDecoder()
