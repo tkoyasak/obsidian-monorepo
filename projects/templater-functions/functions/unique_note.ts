@@ -1,4 +1,4 @@
-import { ulid } from 'ulid'
+import { ulid } from '@std/ulid'
 
 const unique_note = async (tp: Tp) => {
   const id = ulid()

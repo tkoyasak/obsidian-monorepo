@@ -1,21 +1,25 @@
+import { builtinModules } from 'node:module'
+import deno from '@deno/rolldown-plugin'
 import { expandGlob } from '@std/fs'
-import modules from 'node:module'
 import { defineConfig } from 'tsdown'
 
-const configs: ReturnType<typeof defineConfig>[] = []
+const paths: string[] = []
 
 for await (const entry of expandGlob('./functions/*.ts')) {
-  configs.push(
-    defineConfig({
-      entry: entry.path,
-      target: 'node20.18',
-      format: 'cjs',
-      minify: true,
-      external: [
-        ...modules.builtinModules,
-      ],
-    }),
-  )
+  paths.push(entry.path)
 }
 
-export default configs
+export default defineConfig(
+  paths.map((entry) => ({
+    entry,
+    target: 'node20.18',
+    format: 'cjs',
+    minify: true,
+    external: [
+      ...builtinModules,
+    ],
+    plugins: [
+      deno(),
+    ],
+  })),
+)

@@ -1,14 +1,11 @@
+import { assertExists } from '@std/assert'
 import '@std/dotenv/load'
 import { exists, expandGlob } from '@std/fs'
 import * as path from '@std/path'
 import { consola } from 'consola'
 
 const destDir = Deno.env.get('TEMPLATER_FUNCTIONS_DIR')
-
-if (!destDir) {
-  consola.error("env: 'TEMPLATER_FUNCTIONS_DIR' is not set")
-  Deno.exit(1)
-}
+assertExists(destDir)
 
 if (!await exists(destDir, { isDirectory: true })) {
   consola.error(`dir: '${destDir}' does not exist`)
