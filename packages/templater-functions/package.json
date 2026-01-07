@@ -1,0 +1,21 @@
+{
+  "name": "templater-functions",
+  "type": "module",
+  "scripts": {
+    "build": "bun run ./scripts/build.ts",
+    "format": "oxfmt",
+    "lint": "oxlint --type-aware"
+  },
+  "dependencies": {
+    "ulid": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "obsidian": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:",
+    "typescript": "catalog:"
+  }
+}
