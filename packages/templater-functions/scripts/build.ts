@@ -2,14 +2,14 @@ import { builtinModules } from "node:module";
 import path from "node:path";
 import process from "node:process";
 
-const functionsDir = path.join(import.meta.dir, "../functions");
+const srcsDir = path.join(import.meta.dir, "../srcs");
 const distDir = path.join(import.meta.dir, "../dist");
 
 const glob = new Bun.Glob("*.ts");
 const entries: string[] = [];
 
-for await (const file of glob.scan({ cwd: functionsDir })) {
-  entries.push(path.join(functionsDir, file));
+for await (const file of glob.scan({ cwd: srcsDir })) {
+  entries.push(path.join(srcsDir, file));
 }
 
 console.log(`Found ${entries.length} entry files:`);
