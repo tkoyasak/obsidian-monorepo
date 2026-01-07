@@ -1,0 +1,11 @@
+{
+  "name": "css-snippets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "format": "oxfmt"
+  },
+  "dependencies": {
+    "oxfmt": "catalog:"
+  }
+}
