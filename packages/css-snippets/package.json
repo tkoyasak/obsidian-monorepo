@@ -3,9 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "format": "oxfmt"
+    "deploy": "bun run scripts/deploy.ts",
+    "format": "oxfmt",
+    "lint": "oxlint --type-aware"
   },
-  "dependencies": {
-    "oxfmt": "catalog:"
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:",
+    "oxlint-tsgolint": "catalog:"
   }
 }

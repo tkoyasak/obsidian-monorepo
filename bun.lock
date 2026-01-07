@@ -7,8 +7,12 @@
     },
     "packages/css-snippets": {
       "name": "css-snippets",
-      "dependencies": {
+      "devDependencies": {
+        "@types/bun": "catalog:",
+        "@types/node": "catalog:",
         "oxfmt": "catalog:",
+        "oxlint": "catalog:",
+        "oxlint-tsgolint": "catalog:",
       },
     },
     "packages/templater-functions": {
