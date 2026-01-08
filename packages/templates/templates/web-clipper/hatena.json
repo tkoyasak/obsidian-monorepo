@@ -55,9 +55,7 @@
       "type": "multitext"
     }
   ],
-  "triggers": [
-    "https://blog-dry.com/"
-  ],
+  "triggers": ["https://blog-dry.com/"],
   "noteNameFormat": "{{title}}",
   "path": "01-clippings"
 }
