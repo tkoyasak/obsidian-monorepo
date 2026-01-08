@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "deploy": "bun run scripts/deploy.ts",
+    "deploy": "bun run ./scripts/deploy.ts",
     "format": "oxfmt",
     "lint": "oxlint --type-aware"
   },
