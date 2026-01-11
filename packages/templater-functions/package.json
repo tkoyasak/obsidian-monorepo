@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "bun run ./scripts/build.ts",
+    "deploy": "bun run ./scripts/deploy.ts",
     "format": "oxfmt",
     "lint": "oxlint --type-aware"
   },
